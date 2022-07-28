@@ -12,11 +12,12 @@
 	"scripts": {
 		"build": "NODE_ENV=production webpack",
 		"dev": "NODE_ENV=development webpack",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"postinstall": "npx husky install"
 	},
 	"husky": {
 		"hooks": {
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './config/git/commitlint.js'"
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './commitlint.js'"
 		}
 	},
 	"devDependencies": {
