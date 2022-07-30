@@ -23,8 +23,20 @@ module.exports = {
 		rules: [
 			{
                 test: /\.([tj])sx?$/,
-                use: 'babel-loader'
+                use: 'babel-loader',
             },
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(png|jpg|svg|gif)$/,
+				type: 'asset',
+			},
+			{
+				test: /\.(ttf|woff|woff2|eot)$/,
+				type: 'asset',
+			}
 		]
 	}
 }
