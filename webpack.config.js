@@ -30,13 +30,20 @@ module.exports = {
 				use: ['style-loader', 'css-loader'],
 			},
 			{
-				test: /\.(png|jpg|svg|gif)$/,
+				test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
 				type: 'asset',
+				parser: {
+					dataUrlCondition: {
+					  maxSize: 3 * 1024, // 3kb
+					},
+				},
 			},
-			{
-				test: /\.(ttf|woff|woff2|eot)$/,
-				type: 'asset',
-			}
 		]
+	},
+	resolve: {
+		extensions: ['.jsx', '.js', '.tsx', '.ts'],
+        alias: {
+            '@components': path.resolve(srcPath, 'components'),
+        },
 	}
 }
