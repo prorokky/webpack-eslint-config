@@ -45,5 +45,11 @@ module.exports = {
         alias: {
             '@components': path.resolve(srcPath, 'components'),
         },
+	},
+	devServer: {
+		port: 8500,
+		port: 3000,
+        hot: true,
+        historyApiFallback: true,
 	}
 }

@@ -11,7 +11,7 @@
 	"license": "ISC",
 	"scripts": {
 		"build": "NODE_ENV=production webpack",
-		"dev": "NODE_ENV=development webpack",
+		"dev": "NODE_ENV=development webpack-dev-server --open",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"postinstall": "npx husky install",
 		"commit-msg": "commitlint -g ./commitlint.js --edit ''"
@@ -29,7 +29,8 @@
 		"husky": "^8.0.1",
 		"style-loader": "^3.3.1",
 		"webpack": "^5.74.0",
-		"webpack-cli": "^4.10.0"
+		"webpack-cli": "^4.10.0",
+		"webpack-dev-server": "^4.9.3"
 	},
 	"dependencies": {
 		"@types/react": "^18.0.15",
