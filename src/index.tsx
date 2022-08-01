@@ -1,4 +1,4 @@
-import './index.css'
+import './index.module.less'
 
 const str: string = 'Hello, world'
 
