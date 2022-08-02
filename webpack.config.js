@@ -2,6 +2,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const TsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 
 const srcPath = path.resolve(__dirname, 'src')
 const buildPath = path.resolve(__dirname, 'build')
@@ -30,11 +32,13 @@ const getSettingsForStyles = (withModules = false) => {
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.tsx'),
+	target: !isProd ? 'web' : 'browserslist',
 	output: {
 		filename: 'bundle.js',
 		path: buildPath
 	},
-	mode: isProd ? 'development' : 'production',
+	mode: isProd ? 'production' : 'development',
+	devtool: isProd ? 'hidden-source-map' : 'eval-source-map',
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
@@ -43,16 +47,14 @@ module.exports = {
 				collapseWhitespace: isProd,
 			}
 		}),
+		!isProd && new ReactRefreshWebpackPlugin(),
 		new MiniCssExtractPlugin({
 			filename: '[name]-[contenthash].css'
 		}),
-	],
+		new TsCheckerPlugin(),
+	].filter(Boolean),
 	module: {
 		rules: [
-			{
-                test: /\.([tj])sx?$/,
-                use: 'babel-loader',
-            },
 			{
                 test: /\.module\.(le|c)?ss$/,
                 use: getSettingsForStyles(true)
@@ -63,11 +65,15 @@ module.exports = {
                 use: getSettingsForStyles()
             },
 			{
+                test: /\.([tj])sx?$/,
+                use: 'babel-loader',
+            },
+			{
 				test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
-				type: 'asset',
+				type: 'assets',
 				parser: {
 					dataUrlCondition: {
-					  maxSize: 3 * 1024, // 3kb
+					  maxSize: 10 * 1024, // 3kb
 					},
 				},
 			},
@@ -80,6 +86,7 @@ module.exports = {
         },
 	},
 	devServer: {
+		host: 'localhost',
 		port: 8500,
         hot: true,
         historyApiFallback: true,

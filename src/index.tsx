@@ -1,5 +1,11 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { App } from './App'
 import './index.module.less'
 
-const str: string = 'Hello, world'
-
-console.log(str)
+ReactDOM.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('root')
+)
