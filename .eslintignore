@@ -1,0 +1,6 @@
+**/node_modules
+**/build
+babel.config.js
+webpack.config.js
+commitlint.js
+.package-lock.json
