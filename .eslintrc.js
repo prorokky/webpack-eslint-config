@@ -35,7 +35,7 @@ module.exports = {
         'space-unary-ops': 'warn',
         'switch-colon-spacing': 'warn',
         'quote-props': ['warn', 'as-needed'],
-        'no-negated-condition': 'warn',
+        'no-negated-condition': 'off',
         'no-async-promise-executor': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         'no-underscore-dangle': 'off',
@@ -60,7 +60,7 @@ module.exports = {
         'unicorn/no-array-for-each': 'off',
         'react/no-array-index-key': 'off',
         'indent': [
-            2,
+            4,
             'tab',
             {
                 'SwitchCase': 1
@@ -116,8 +116,8 @@ module.exports = {
         'jsx-a11y/interactive-supports-focus': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/label-has-associated-control': 'off',
-        'react/jsx-indent': [2, 'tab'],
-        'react/jsx-indent-props': [2, 'tab'],
+        'react/jsx-indent': [4, 'tab'],
+        'react/jsx-indent-props': [4, 'tab'],
         'react/jsx-curly-spacing': ['warn', {
             'when': 'always',
             'children': true
@@ -155,7 +155,7 @@ module.exports = {
             }
         ],
         '@typescript-eslint/indent': [
-            2,
+            4,
             'tab',
             {
                 'SwitchCase': 1,
