@@ -10,6 +10,12 @@
 			"dom.iterable",
 			"esnext"
 		],
+		"plugins": [
+			{
+				"name": "typescript-strict-plugin",
+				"paths": ["./src"]
+			}
+		],
 		"allowJs": true,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
@@ -27,5 +33,5 @@
 		"noUnusedParameters": true,
 	},
 	"include": ["src"],
-	"exclude": ["./node_modules"]
+	"exclude": ["./node_modules", ".eslintrc.js"]
 }

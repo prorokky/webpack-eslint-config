@@ -4,3 +4,4 @@ babel.config.js
 webpack.config.js
 commitlint.js
 .package-lock.json
+.eslintrc.js
