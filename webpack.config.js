@@ -1,4 +1,5 @@
 const path = require('path')
+const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -40,6 +41,7 @@ module.exports = {
 	mode: isProd ? 'production' : 'development',
 	devtool: isProd ? 'hidden-source-map' : 'eval-source-map',
 	plugins: [
+		new ESLintPlugin(),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: path.join(srcPath, 'index.html'),

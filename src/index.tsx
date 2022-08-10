@@ -1,11 +1,13 @@
+import './index.module.less'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { App } from './App'
-import './index.module.less'
 
 ReactDOM.render(
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>,
-	document.getElementById('root')
+	document.querySelector('#root'),
 )
