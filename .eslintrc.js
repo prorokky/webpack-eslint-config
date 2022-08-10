@@ -22,7 +22,6 @@ module.exports = {
 		'simple-import-sort',
     ],
     "rules": {
-		'no-restricted-globals': 'off',
         'unicorn/numeric-separators-style': 'off',
         'no-prototype-builtins': 'off',
         'import/prefer-default-export': 'off',
@@ -31,13 +30,13 @@ module.exports = {
         'semi-spacing': 'warn',
         'semi-style': 'warn',
         'space-before-blocks': 'warn',
+		'no-console': 'warn',
         'space-infix-ops': 'warn',
         'space-unary-ops': 'warn',
         'switch-colon-spacing': 'warn',
         'quote-props': ['warn', 'as-needed'],
         'no-negated-condition': 'off',
         'no-async-promise-executor': 'off',
-        '@typescript-eslint/no-misused-promises': 'off',
         'no-underscore-dangle': 'off',
         'no-negated-condition': 'off',
         'no-param-reassign': [
@@ -173,12 +172,6 @@ module.exports = {
             }
         ],
         '@typescript-eslint/no-floating-promises': 'off',
-        'no-void': [
-            'error',
-            {
-                'allowAsStatement': true
-            }
-        ],
         '@typescript-eslint/type-annotation-spacing': 'error',
         '@typescript-eslint/member-delimiter-style': 'error',
         'import/no-unresolved': 'off',
@@ -187,15 +180,6 @@ module.exports = {
         'import/no-useless-path-segments': ['error', {
             'noUselessIndex': true
         }],
-        'unicorn/filename-case': [
-            'error',
-            {
-                'cases': {
-                    'camelCase': true,
-                    'pascalCase': true
-                }
-            }
-        ],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         '@typescript-eslint/restrict-template-expressions': 'off'
