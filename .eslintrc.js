@@ -54,6 +54,15 @@ module.exports = {
                 'variables': true
             }
         ],
+		"unicorn/filename-case": [
+			"error",
+			{
+				"cases": {
+					"camelCase": true,
+					"pascalCase": true
+				}
+			}
+		],
         'unicorn/prefer-module': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-array-for-each': 'off',
